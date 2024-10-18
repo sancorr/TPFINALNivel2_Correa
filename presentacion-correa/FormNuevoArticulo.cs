@@ -71,25 +71,23 @@ namespace presentacion_correa
 					
 					if(archivo != null && !(tbxUrlNuevo.Text.ToLower().Contains("http")))
 					{
-						//libero la img del pbx en modificacion
-						if (pbxNuevoArticulo.Image != null)
-						{
-							pbxNuevoArticulo.Image = null;
-							pbxNuevoArticulo.Image.Dispose();
-						}
 
-						//si es la misma imagen del pbx en el form principal, la libero tambien desde la referencia al formulario principal que viene por parametro
-						if(formPrincipal.pbxArticulo.Image != null && formPrincipal.pbxArticulo.ImageLocation == imagenAnterior)
-						{
-							formPrincipal.pbxArticulo.Image = null;
-							formPrincipal.pbxArticulo.Image.Dispose();
-						}
-
-						//si la ruta a la imagen anterior no es nula o vacia Y si esa ruta existe, eliminar.
 						if(!string.IsNullOrEmpty(imagenAnterior) && File.Exists(imagenAnterior))
 						{
 							try
 							{
+								//if(pbxNuevoArticulo.Image != null && pbxNuevoArticulo.ImageLocation ==          imagenAnterior)
+								//{
+								//pbxNuevoArticulo.Image.Dispose();
+								//pbxNuevoArticulo.Image = null;
+								//}
+
+								//if(formPrincipal.pbxArticulo.Image != null &&  formPrincipal.pbxArticulo.ImageLocation == imagenAnterior)
+								//{
+								//formPrincipal.pbxArticulo.Image.Dispose();
+								//formPrincipal.pbxArticulo.Image = null;
+								//}
+
 								File.Delete(imagenAnterior);
 							}
 							catch (Exception ex)
@@ -107,15 +105,22 @@ namespace presentacion_correa
 				}
 				else
 				{
-					negocio.agregarArticulo(article);
-					MessageBox.Show("Articulo agregado con éxito", "ARTICULO AGREGADO");
+					
 					if (archivo != null && !(tbxUrlNuevo.Text.ToLower().Contains("http")))
 					{
-						File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
-					}
-				}
+						string destinoImagen = ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName;
 
-				
+						File.Copy(archivo.FileName, destinoImagen);
+						article.ImagenUrl = destinoImagen;
+					}
+					else
+					{
+						article.ImagenUrl = tbxUrlNuevo.Text;
+					}
+
+					negocio.agregarArticulo(article);
+					MessageBox.Show("Articulo agregado con éxito", "ARTICULO AGREGADO");
+				}
 
 				Close();
 			}

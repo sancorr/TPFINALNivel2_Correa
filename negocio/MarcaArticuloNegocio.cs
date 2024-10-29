@@ -9,6 +9,7 @@ namespace negocio
 {
 	public class MarcaArticuloNegocio
 	{
+		//Listar marcas desde db
 		public List<MarcaArticulo> listar()
 		{
 			List<MarcaArticulo> lista = new List<MarcaArticulo>();
@@ -37,5 +38,28 @@ namespace negocio
 				datos.cerrarConexion();
 			}
 		}
+
+		//Insertar nueva marca- no lo uso pero la dejo para implementar a futuro
+		public void insertarMarca(MarcaArticulo marca)
+		{
+			AccesoDatos datos = new AccesoDatos();
+
+			try
+			{
+				marca.Descripcion = marca.Descripcion.ToLower();
+				datos.setConsulta("insert into MARCAS (Descripcion) values (@descripcion)");
+				datos.setParametros("@descripcion", marca.Descripcion);
+				datos.ejecutarAccion();
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				datos.cerrarConexion();
+			}
+		}
+
 	}
 }

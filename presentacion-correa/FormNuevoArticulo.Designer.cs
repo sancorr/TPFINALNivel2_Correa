@@ -234,6 +234,9 @@ namespace presentacion_correa
 			this.Controls.Add(this.lblDescripcion);
 			this.Controls.Add(this.lblNombreArticulo);
 			this.Controls.Add(this.lblCodigo);
+			this.MaximizeBox = false;
+			this.MaximumSize = new System.Drawing.Size(652, 489);
+			this.MinimumSize = new System.Drawing.Size(652, 489);
 			this.Name = "FormNuevoArticulo";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Nuevo articulo";

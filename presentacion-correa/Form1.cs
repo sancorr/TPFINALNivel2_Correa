@@ -101,7 +101,7 @@ namespace presentacion_correa
 					dgvArticulos.DataSource = new List<Articulo>();
 
 					btnModificarArticulo.Visible = false;
-					btnEliminar.Visible = false;
+					btnEliminar.Visible = false;				
 
 					this.Shown += (s, e) =>
 					{
@@ -213,6 +213,22 @@ namespace presentacion_correa
 				string filtro = tbxFiltro.Text;
 
 				dgvArticulos.DataSource = negocio.filtrarDB(campo, criterio, filtro);
+
+				if (dgvArticulos.Rows.Count == 0)
+				{
+					pbxArticulo.Image = null;
+					pbxArticulo.Visible = false;
+
+					btnModificarArticulo.Visible = false;
+					btnEliminar.Visible = false;
+				}
+				else
+				{
+					btnModificarArticulo.Visible = true;
+					btnEliminar.Visible = true;
+
+					pbxArticulo.Visible = true;
+				}
 			}
 			catch (Exception ex)
 			{

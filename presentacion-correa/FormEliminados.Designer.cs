@@ -54,9 +54,12 @@ namespace presentacion_correa
 			this.dgvEliminados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
 			this.dgvEliminados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvEliminados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.dgvEliminados.Location = new System.Drawing.Point(13, 94);
 			this.dgvEliminados.MinimumSize = new System.Drawing.Size(450, 225);
+			this.dgvEliminados.MultiSelect = false;
 			this.dgvEliminados.Name = "dgvEliminados";
+			this.dgvEliminados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvEliminados.Size = new System.Drawing.Size(610, 225);
 			this.dgvEliminados.TabIndex = 1;
 			this.dgvEliminados.SelectionChanged += new System.EventHandler(this.dgvEliminados_SelectionChanged);
@@ -66,7 +69,7 @@ namespace presentacion_correa
 			this.btnRestaurar.Location = new System.Drawing.Point(13, 346);
 			this.btnRestaurar.Name = "btnRestaurar";
 			this.btnRestaurar.Size = new System.Drawing.Size(117, 23);
-			this.btnRestaurar.TabIndex = 2;
+			this.btnRestaurar.TabIndex = 0;
 			this.btnRestaurar.Text = "Restaurar articulo";
 			this.btnRestaurar.UseVisualStyleBackColor = true;
 			this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
@@ -76,7 +79,7 @@ namespace presentacion_correa
 			this.btnCancelar.Location = new System.Drawing.Point(164, 346);
 			this.btnCancelar.Name = "btnCancelar";
 			this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-			this.btnCancelar.TabIndex = 3;
+			this.btnCancelar.TabIndex = 1;
 			this.btnCancelar.Text = "Cancelar";
 			this.btnCancelar.UseVisualStyleBackColor = true;
 			this.btnCancelar.Click += new System.EventHandler(this.button2_Click);
@@ -91,9 +94,12 @@ namespace presentacion_correa
 			this.Controls.Add(this.btnRestaurar);
 			this.Controls.Add(this.dgvEliminados);
 			this.Controls.Add(this.pbxEliminados);
+			this.MaximizeBox = false;
+			this.MaximumSize = new System.Drawing.Size(954, 426);
+			this.MinimumSize = new System.Drawing.Size(954, 426);
 			this.Name = "FormEliminados";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "FormEliminados";
+			this.Text = "Articulos eliminados";
 			this.Load += new System.EventHandler(this.FormEliminados_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pbxEliminados)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEliminados)).EndInit();

@@ -49,8 +49,11 @@ namespace presentacion_correa
 			// dgvArticulos
 			// 
 			this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.dgvArticulos.Location = new System.Drawing.Point(12, 129);
+			this.dgvArticulos.MultiSelect = false;
 			this.dgvArticulos.Name = "dgvArticulos";
+			this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvArticulos.Size = new System.Drawing.Size(796, 194);
 			this.dgvArticulos.TabIndex = 0;
 			this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
@@ -98,7 +101,7 @@ namespace presentacion_correa
 			this.cbxCampo.Location = new System.Drawing.Point(73, 68);
 			this.cbxCampo.Name = "cbxCampo";
 			this.cbxCampo.Size = new System.Drawing.Size(121, 21);
-			this.cbxCampo.TabIndex = 5;
+			this.cbxCampo.TabIndex = 0;
 			this.cbxCampo.SelectedIndexChanged += new System.EventHandler(this.cbxCampo_SelectedIndexChanged);
 			// 
 			// cbxCriterio
@@ -108,21 +111,21 @@ namespace presentacion_correa
 			this.cbxCriterio.Location = new System.Drawing.Point(263, 68);
 			this.cbxCriterio.Name = "cbxCriterio";
 			this.cbxCriterio.Size = new System.Drawing.Size(121, 21);
-			this.cbxCriterio.TabIndex = 6;
+			this.cbxCriterio.TabIndex = 1;
 			// 
 			// tbxFiltro
 			// 
 			this.tbxFiltro.Location = new System.Drawing.Point(453, 68);
 			this.tbxFiltro.Name = "tbxFiltro";
 			this.tbxFiltro.Size = new System.Drawing.Size(137, 20);
-			this.tbxFiltro.TabIndex = 7;
+			this.tbxFiltro.TabIndex = 2;
 			// 
 			// btnBuscar
 			// 
 			this.btnBuscar.Location = new System.Drawing.Point(635, 66);
 			this.btnBuscar.Name = "btnBuscar";
 			this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-			this.btnBuscar.TabIndex = 8;
+			this.btnBuscar.TabIndex = 3;
 			this.btnBuscar.Text = "Buscar";
 			this.btnBuscar.UseVisualStyleBackColor = true;
 			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -132,7 +135,7 @@ namespace presentacion_correa
 			this.btnNuevoArticulo.Location = new System.Drawing.Point(12, 345);
 			this.btnNuevoArticulo.Name = "btnNuevoArticulo";
 			this.btnNuevoArticulo.Size = new System.Drawing.Size(87, 23);
-			this.btnNuevoArticulo.TabIndex = 9;
+			this.btnNuevoArticulo.TabIndex = 4;
 			this.btnNuevoArticulo.Text = "Nuevo artículo";
 			this.btnNuevoArticulo.UseVisualStyleBackColor = true;
 			this.btnNuevoArticulo.Click += new System.EventHandler(this.btnNuevoArticulo_Click);
@@ -142,7 +145,7 @@ namespace presentacion_correa
 			this.btnModificarArticulo.Location = new System.Drawing.Point(123, 345);
 			this.btnModificarArticulo.Name = "btnModificarArticulo";
 			this.btnModificarArticulo.Size = new System.Drawing.Size(75, 23);
-			this.btnModificarArticulo.TabIndex = 10;
+			this.btnModificarArticulo.TabIndex = 5;
 			this.btnModificarArticulo.Text = "Modificar artículo";
 			this.btnModificarArticulo.UseVisualStyleBackColor = true;
 			this.btnModificarArticulo.Click += new System.EventHandler(this.btnModificarArticulo_Click);
@@ -152,7 +155,7 @@ namespace presentacion_correa
 			this.btnEliminar.Location = new System.Drawing.Point(222, 345);
 			this.btnEliminar.Name = "btnEliminar";
 			this.btnEliminar.Size = new System.Drawing.Size(116, 23);
-			this.btnEliminar.TabIndex = 11;
+			this.btnEliminar.TabIndex = 6;
 			this.btnEliminar.Text = "Eliminar artículo";
 			this.btnEliminar.UseVisualStyleBackColor = true;
 			this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -162,7 +165,7 @@ namespace presentacion_correa
 			this.btnVerEliminados.Location = new System.Drawing.Point(362, 345);
 			this.btnVerEliminados.Name = "btnVerEliminados";
 			this.btnVerEliminados.Size = new System.Drawing.Size(106, 23);
-			this.btnVerEliminados.TabIndex = 12;
+			this.btnVerEliminados.TabIndex = 7;
 			this.btnVerEliminados.Text = "Ver eliminados";
 			this.btnVerEliminados.UseVisualStyleBackColor = true;
 			this.btnVerEliminados.Click += new System.EventHandler(this.btnVerEliminados_Click);
@@ -185,6 +188,9 @@ namespace presentacion_correa
 			this.Controls.Add(this.labelCampo);
 			this.Controls.Add(this.pbxArticulo);
 			this.Controls.Add(this.dgvArticulos);
+			this.MaximizeBox = false;
+			this.MaximumSize = new System.Drawing.Size(1110, 489);
+			this.MinimumSize = new System.Drawing.Size(1110, 489);
 			this.Name = "formArticulos";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Articulos";

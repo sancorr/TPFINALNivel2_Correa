@@ -202,9 +202,11 @@ namespace presentacion_correa
 			MarcaArticuloNegocio marcaArticuloNegocio = new MarcaArticuloNegocio();
 			try
 			{
+
 				cbxMarcaNuevo.DataSource = marcaArticuloNegocio.listar();
 				cbxMarcaNuevo.ValueMember = "Id";
 				cbxMarcaNuevo.DisplayMember = "Descripcion";
+
 				cbxCategoriaNuevo.DataSource = articuloNuevoNegocio.listar();
 				cbxCategoriaNuevo.ValueMember = "Id";
 				cbxCategoriaNuevo.DisplayMember = "Descripcion";
@@ -275,7 +277,6 @@ namespace presentacion_correa
 				cargarImagen(archivo.FileName);
 			}
 		}
-
 
 	}
 }
